@@ -1,31 +1,29 @@
-name: CI/CD Pipeline
+name: cicd pipeline
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-
   code:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        run: echo "Code Clone from GitHub"
+        run: echo "code clone from github"
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Docker Container
-        run: echo "Docker Container build"
+      - name: build docker container
+        run: echo "docker container build"
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Test the container
-        run: echo "Testing the container"
+      - name: test the container
+        run: echo "testing the container"
 
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploying the app
-        run: echo "Docker compose deployed the app"
+      - name: deploying the app
+        run: echo "docker compose deployed the app"
