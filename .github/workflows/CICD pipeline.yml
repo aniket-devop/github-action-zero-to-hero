@@ -2,6 +2,16 @@ name: CI/CD Pipeline
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment where workflow will run"
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
 
 jobs:
 
@@ -30,4 +40,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Application
-        run: echo "Deploying application"
+        run: echo "Deploying to ${{ github.event.inputs.environment }}"
