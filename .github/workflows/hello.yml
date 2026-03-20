@@ -2,7 +2,7 @@ name: hello aniket
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   greet:
@@ -15,12 +15,5 @@ jobs:
       - name: say hello to username
         run: echo "hello $USER"
 
-
-    details :
-
-    runs-on : ubuntu-latest
-    steps : 
-    - name : version of python, docker, etc
-    run : docker --version && python --version 
-
-    
+      - name: version of python, docker
+        run: docker --version && python --version
