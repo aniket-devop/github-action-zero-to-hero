@@ -2,7 +2,10 @@ name: hello aniket
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+    paths:
+      - "index.html"
 
 jobs:
   greet:
