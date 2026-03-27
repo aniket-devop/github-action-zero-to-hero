@@ -1,218 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniket Kumar | DevOps Engineer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniket Kumar – DevOps Engineer</title>
 
     <style>
-        /* ---------------- GLOBAL STYLES ---------------- */
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #0b0f19;
-            color: #e6e6e6;
-            overflow-x: hidden;
+            font-family: "Poppins", sans-serif;
+            background: #0f1115;
+            color: white;
         }
 
-        h1, h2, h3 {
-            font-weight: 600;
-        }
-
-        a {
-            color: cyan;
-            text-decoration: none;
-        }
-
-        /* ---------------- GRID BACKGROUND ---------------- */
-        .grid-bg {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: 
-                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
-                linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: gridMove 12s linear infinite;
-        }
-
-        @keyframes gridMove {
-            from { background-position: 0 0; }
-            to { background-position: 40px 40px; }
-        }
-
-        /* ---------------- NAVBAR ---------------- */
-        nav {
+        header {
             display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 25px 0;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.02);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            justify-content: space-between;
+            padding: 25px 70px;
+            align-items: center;
+        }
+
+        header h2 {
+            font-size: 24px;
+            color: #4da3ff;
         }
 
         nav a {
-            color: #aaa;
-            font-size: 16px;
-            transition: 0.3s;
+            color: #ccc;
+            margin-left: 30px;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         nav a:hover {
-            color: cyan;
-            text-shadow: 0 0 5px cyan;
+            color: #4da3ff;
         }
 
-        /* ---------------- HERO SECTION ---------------- */
-        .hero {
-            text-align: center;
-            padding: 130px 20px 110px;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 70px;
         }
 
-        .hero h1 {
+        .left {
+            max-width: 50%;
+        }
+
+        .left h1 {
             font-size: 55px;
-            color: cyan;
-            text-shadow: 0 0 10px cyan;
+            line-height: 1.2;
+            font-weight: 700;
         }
 
-        .hero p {
-            font-size: 22px;
-            opacity: 0.8;
+        .left p {
+            margin-top: 20px;
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
-        /* ---------------- SECTION CONTAINER ---------------- */
-        section {
-            max-width: 1050px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        /* ---------------- CARDS ---------------- */
-        .card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: cyan;
-            box-shadow: 0 0 20px rgba(0,255,255,0.2);
-            transform: translateY(-4px);
-        }
-
-        /* ---------------- PROJECT BUTTON ---------------- */
         .btn {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: 1px solid cyan;
-            color: cyan;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: cyan;
-            color: #000;
-            box-shadow: 0 0 20px cyan;
+            margin-top: 30px;
+            padding: 13px 25px;
+            background: #4da3ff;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        /* ---------------- FOOTER ---------------- */
+        .btn:hover {
+            background: #1d8bff;
+        }
+
+        .right img {
+            width: 380px;
+            border-radius: 20px;
+            filter: drop-shadow(0 0 20px #4da3ff88);
+        }
+
+        .section {
+            padding: 80px 70px;
+        }
+
+        .section h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #181a20;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #222;
+        }
+
+        .card p {
+            color: #ccc;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            opacity: 0.6;
-            margin-top: 40px;
+            padding: 40px;
+            background: #0a0c0f;
+            margin-top: 70px;
+            font-size: 15px;
+            color: #999;
         }
     </style>
 </head>
 
 <body>
 
-<div class="grid-bg"></div>
+    <header>
+        <h2>DevOps Engineer</h2>
 
-<!-- ---------------- NAVBAR ---------------- -->
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<!-- ---------------- HERO ---------------- -->
-<section class="hero">
-    <h1>Aniket Kumar</h1>
-    <p>DevOps Engineer | Cloud | Linux | Azure | Terraform | Docker | Kubernetes</p>
-</section>
+    <div class="container">
+        <div class="left">
+            <h1>I'm <span style="color:#4da3ff">Aniket Kumar</span><br>DevOps Engineer</h1>
 
-<!-- ---------------- ABOUT ---------------- -->
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            I am a DevOps Engineer passionate about Cloud, CI/CD, Automation and Infrastructure-as-Code.
-            I have hands-on experience with Linux, Azure, Terraform, GitHub Actions, Docker and Kubernetes.
-            I love building fast, modern and automated cloud deployments.
-        </p>
-    </div>
-</section>
+            <p>
+                I build cloud-native infrastructure using Linux, Azure, Terraform, Docker,
+                Kubernetes, GitHub Actions & CI/CD automation.
+            </p>
 
-<!-- ---------------- SKILLS ---------------- -->
-<section id="skills">
-    <h2>Skills & Tools</h2>
+            <a href="#projects" class="btn">View My Work →</a>
+        </div>
 
-    <div class="card">
-        <h3>🛠 DevOps Tools</h3>
-        <p>GitHub Actions, Docker, Kubernetes, Terraform, Helm</p>
+        <div class="right">
+            <img src="https://raw.githubusercontent.com/aniket-devop/assets/main/devops-hero.png" alt="DevOps Image" />
+        </div>
     </div>
 
-    <div class="card">
-        <h3>☁ Cloud</h3>
-        <p>Azure, GCP (basic), AWS (basic)</p>
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                I am a DevOps Engineer passionate about Cloud, CI/CD, Automation, Infrastructure-as-Code,
+                and building scalable deployment pipelines.
+            </p>
+        </div>
     </div>
 
-    <div class="card">
-        <h3>💻 OS & Programming</h3>
-        <p>Linux, Shell Scripting, YAML, Python (basic)</p>
-    </div>
-</section>
+    <div class="section" id="skills">
+        <h2>Skills</h2>
 
-<!-- ---------------- PROJECTS ---------------- -->
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>CI/CD Pipeline using GitHub Actions</h3>
-        <p>Fully automated pipeline with testing, build & deploy stages.</p>
-        <a href="#" class="btn">View Project</a>
+        <div class="card">
+            <p>✔ Linux</p>
+            <p>✔ Azure Cloud</p>
+            <p>✔ Terraform (IaC)</p>
+            <p>✔ Docker & Containers</p>
+            <p>✔ Kubernetes</p>
+            <p>✔ GitHub Actions CI/CD</p>
+        </div>
     </div>
 
-    <div class="card">
-        <h3>Terraform on Azure</h3>
-        <p>Created storage accounts, VNets, containers using IaC.</p>
-        <a href="#" class="btn">View Project</a>
-    </div>
-</section>
+    <div class="section" id="projects">
+        <h2>Projects</h2>
 
-<!-- ---------------- CONTACT ---------------- -->
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: aniket@example.com</p>
-        <p>LinkedIn: /in/aniket</p>
-        <p>GitHub: @aniket-devop</p>
-    </div>
-</section>
+        <div class="card">
+            <h3>🔹 CI/CD Pipeline using GitHub Actions</h3>
+            <p>Automated build–test–deploy workflow using Actions, Docker, and cloud hosting.</p>
+            <a class="btn" href="#">View Project</a>
+        </div>
 
-<footer>
-    © 2026 Aniket Kumar — DevOps Portfolio
-</footer>
+        <div class="card">
+            <h3>🔹 Deploying Infrastructure with Terraform</h3>
+            <p>Created Azure resources using IaC modules and state management.</p>
+            <a class="btn" href="#">View Project</a>
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <div class="card">
+            <p>Email: aniket@example.com</p>
+            <p>LinkedIn: linkedin.com/in/aniket</p>
+            <p>GitHub: github.com/aniket-devop</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Aniket Kumar — All Rights Reserved
+    </footer>
 
 </body>
-</html>
 </html>
