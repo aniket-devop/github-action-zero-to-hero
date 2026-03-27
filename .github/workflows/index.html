@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniket Kumar | DevOps Engineer</title>
+
+    <style>
+        /* ---------------- GLOBAL STYLES ---------------- */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f')
+            no-repeat center/cover fixed;
+            backdrop-filter: blur(6px);
+            color: white;
+        }
+
+        header, section, footer {
+            padding: 40px 10%;
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* ---------------- HERO / HEADER ---------------- */
+        header {
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        header p {
+            font-size: 22px;
+            margin-top: -8px;
+            color: #dcdcdc;
+        }
+
+        /* ---------------- GLASS CARD ---------------- */
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .glass:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+        }
+
+        /* ---------------- SECTION HEADINGS ---------------- */
+        h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        /* ---------------- PROJECTS ---------------- */
+        .project {
+            margin-bottom: 25px;
+        }
+
+        .project a {
+            text-decoration: none;
+            color: #00ffe0;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aniket Kumar</h1>
+        <p>DevOps Engineer | Cloud | Linux | Azure | Terraform | Docker | Kubernetes</p>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="glass">
+        <h2>About Me</h2>
+        <p>
+            I am a DevOps Engineer passionate about Cloud, CI/CD, Automation and Infrastructure-as-Code.
+            I have hands-on experience with Linux, Azure, Terraform, GitHub Actions, Docker and Kubernetes.
+            I love building fast, modern and automated cloud deployments.
+        </p>
+    </section>
+
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="glass">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>▪ CI/CD Pipeline using GitHub Actions</h3>
+            <p>Fully automated deployment pipeline with testing, build & deploy stages.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>▪ Terraform Infra Setup on Azure</h3>
+            <p>Created storage accounts, VMs, VNets using Terraform IaC.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>▪ Dockerized NGINX Web App</h3>
+            <p>Containerized and deployed NGINX static app on cloud VM.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+    </section>
+
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="glass">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:aniket@example.com" style="color:#00ffe0;">aniket@example.com</a></p>
+        <p>LinkedIn: <a href="#" style="color:#00ffe0;">linkedin.com/in/aniket</a></p>
+    </section>
+
+
+
+    <footer>
+        <p>© 2026 Aniket Kumar — All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
