@@ -1,2 +1,2 @@
-flaske8
-flaskgit add
+Flask==3.0.0
+flake8==7.0.0
