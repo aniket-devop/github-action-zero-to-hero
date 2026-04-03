@@ -1,11 +1,11 @@
-FROM python:3.13-slim
+FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY . .
-
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+COPY . .
 
+EXPOSE 5000
 CMD ["python", "app.py"]
