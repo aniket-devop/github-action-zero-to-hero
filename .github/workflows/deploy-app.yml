@@ -7,9 +7,6 @@ jobs:
   deploy:
     runs-on: self-hosted
 
-    env:
-      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USERS }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,4 +14,6 @@ jobs:
       - name: Deploy with Docker Compose
         run: |
           docker compose down
-          docker compose up -d }}
+          docker compose up -d
+        env:
+          DOCKERHUB_USER: ${{ vars.DOCKERHUB_USERS }}
