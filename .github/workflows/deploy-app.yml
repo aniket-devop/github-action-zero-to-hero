@@ -15,8 +15,7 @@ steps:
   - name: Checkout code
     uses: actions/checkout@v4
 
-  - name: Debug files
-    run: ls -la
-
   - name: Deploy with Docker Compose
     run: docker compose up -d --build
+
+
