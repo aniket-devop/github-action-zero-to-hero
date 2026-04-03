@@ -1,8 +1,7 @@
 name: Deploy Flask App
 
 on:
-workflow_dispatch:
-
+  workflow-dispatch
 jobs:
 deploy:
 runs-on: self-hosted
@@ -16,5 +15,3 @@ steps:
 
   - name: Deploy with Docker Compose
     run: docker compose up -d --build
-
-
