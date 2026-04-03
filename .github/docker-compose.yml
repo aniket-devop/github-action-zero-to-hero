@@ -9,3 +9,4 @@ services:
       - FLASK_APP=app.py
       - FLASK_ENV=production
     # Add any other service configuration as needed
+    
