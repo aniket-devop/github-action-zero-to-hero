@@ -1,5 +1,10 @@
+version: '3.8'
+
 services:
-  web:
-    image: ${DOCKERHUB_USER}/github-actions-app:latest
+  flask-app:
+    build: .
+    container_name: flask-app
     ports:
-      - "80:80"
+      - "5000:5000"
+
+      
