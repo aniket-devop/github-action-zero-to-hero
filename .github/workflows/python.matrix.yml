@@ -1,13 +1,16 @@
 name: Python Matrix
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   validate:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
 
