@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   workflow_call:
     secrets:
-      SSH_KEY_BASE64:
+      SSH_KEY:
         required: true
       HOST:
         required: true
@@ -15,25 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # ✅ FIXED: SSH Key decode + permission
-      - name: Setup SSH Key
-        run: |
-          echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 -d > key.pem
-          chmod 600 key.pem
-
-      # ✅ Deploy via SSH
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key_path: key.pem
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            echo "🚀 Deployment Started"
+            echo "🚀 Deploy Start"
 
             cd /home/ubuntu
 
@@ -48,4 +40,4 @@ jobs:
             docker-compose down || true
             docker-compose up -d --build
 
-            echo "✅ Deployment Finished"
+            echo "✅ Done"
