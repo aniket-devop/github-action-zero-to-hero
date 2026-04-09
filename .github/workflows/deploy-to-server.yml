@@ -10,16 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 🔐 Decode SSH key (base64 method)
       - name: Decode SSH key
         run: |
           echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 -d > key.pem
           chmod 600 key.pem
 
-      # 🚀 Connect to server
       - name: SSH to Server
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -28,22 +25,6 @@ jobs:
           key_path: key.pem
           port: 22
           script: |
-            echo "✅ Connected successfully"
-
-            # project folder me jao (agar nahi hai to create karo)
-            mkdir -p /home/ubuntu/app
-            cd /home/ubuntu/app
-
-            # latest code pull karo
-            if [ -d ".git" ]; then
-              git pull origin main
-            else
-              git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git .
-            fi
-
-            # docker run (agar use kar raha hai)
-            docker-compose down
-            docker-compose up -d --build
-
-            echo "🚀 Deployment done"
-
+            echo "Connected successfully"
+            cd /home/ubuntu
+            ls -la
