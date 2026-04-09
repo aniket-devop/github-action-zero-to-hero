@@ -25,3 +25,11 @@ jobs:
   image-scan:
     needs: build-push
     uses: ./.github/workflows/image-scan.yml
+
+  deploy:
+    needs: image-scan
+    uses: ./.github/workflows/deploy-to-server.yml
+    secrets:
+      SSH_KEY_BASE64: ${{ secrets.SSH_KEY_BASE64 }}
+      HOST: ${{ secrets.HOST }}
+      USERNAME: ${{ secrets.USERNAME }}

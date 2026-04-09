@@ -1,21 +1,30 @@
-name: Docker App
+name: Deploy to Server
 
 on:
-  workflow_dispatch
+  workflow_call:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Debug files
+      - name: Decode SSH key
         run: |
-          pwd
-          ls -la
-          find . -name "docker-compose.yml"
+          echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 -d > key.pem
+          chmod 600 key.pem
 
-      - name: Deploy with Docker Compose
-        run: docker compose -f .github/docker-compose.yml up -d --build
+      - name: Deploy on Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key_path: key.pem
+          port: 22
+          script: |
+            cd /home/ubuntu
+
+            # Pull latest code
+            git pull origin main
+
+            # Run Docker Compose
+            docker compose up -d --build
