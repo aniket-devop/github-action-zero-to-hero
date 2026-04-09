@@ -1,25 +1,25 @@
 name: Deploy to Server
 
 on:
-  workflow_call:
-    secrets:
-      SSH_KEY_BASE64:
-        required: true
-      HOST:
-        required: true
-      USERNAME:
-        required: true
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Decode SSH Key
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ✅ Decode SSH Key properly
+      - name: Setup SSH Key
         run: |
           echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 -d > key.pem
           chmod 600 key.pem
 
+      # ✅ Deploy via SSH (FIXED)
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -28,12 +28,14 @@ jobs:
           key_path: key.pem
           port: 22
           script: |
+            echo "🚀 Starting Deployment..."
+
             # Go to home
             cd /home/ubuntu
 
             # Clone repo if not exists
             if [ ! -d "github-action-zero-to-hero" ]; then
-              git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git github-action-zero-to-hero
+              git clone https://github.com/${{ github.repository }} github-action-zero-to-hero
             fi
 
             # Go inside repo
@@ -45,3 +47,5 @@ jobs:
             # Run container
             docker-compose down || true
             docker-compose up -d --build
+
+            echo "✅ Deployment Done!"
