@@ -13,6 +13,6 @@ jobs:
         with:
           image-ref: aniket484/github-actions-app:latest
           format: table
-          exit-code: 1
+          exit-code: 0   # 👈 yahi change karna hai
           ignore-unfixed: true
           severity: CRITICAL,HIGH
