@@ -1,7 +1,8 @@
 name: Docker Build & Push
 
 on:
-  workflow_dispatch:
+  workflow_call:   # 👈 FIX (mandatory for reusable)
+  workflow_dispatch:  # 👈 optional (manual run ke liye)
 
 jobs:
   build-and-push:
