@@ -1,14 +1,21 @@
 name: Deploy to Server
 
 on:
-  workflow_call:   # ✅ YE ADD KARNA HAI
+  workflow_call:
+    secrets:
+      SSH_KEY_BASE64:
+        required: true
+      HOST:
+        required: true
+      USERNAME:
+        required: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Decode SSH key
+      - name: Decode SSH Key
         run: |
           echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 -d > key.pem
           chmod 600 key.pem
@@ -22,4 +29,10 @@ jobs:
           port: 22
           script: |
             cd /home/ubuntu
+
+            # Pull latest code
+            git pull origin main
+
+            # Run container
+            docker compose down
             docker compose up -d --build

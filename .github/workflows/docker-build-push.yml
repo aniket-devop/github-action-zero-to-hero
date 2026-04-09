@@ -5,11 +5,13 @@ on:
     secrets:
       DOCKERHUB_TOKEN:
         required: true
-  workflow_dispatch:
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
+    env:
+      IMAGE_NAME: aniket484/github-actions-app
 
     steps:
       - name: Checkout Code
@@ -27,5 +29,7 @@ jobs:
           context: .
           push: true
           tags: |
-            aniket484/github-actions-app:latest
-            aniket484/github-actions-app:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
