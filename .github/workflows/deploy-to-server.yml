@@ -2,6 +2,13 @@ name: Deploy to Server
 
 on:
   workflow_call:
+    secrets:
+      HOST:
+        required: true
+      USERNAME:
+        required: true
+      SSH_KEY:
+        required: true
 
 jobs:
   deploy:
@@ -11,9 +18,11 @@ jobs:
       - name: SSH to Server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_SSH_HOST }}
-          username: ${{ secrets.EC2_SSH_USER }}
-          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
-            echo "Starting Deployment"
-            mkdir devops
+            docker pull aniket484/github-actions-app:latest
+            docker stop app || true
+            docker rm app || true
+            docker run -d -p 80:80 --name app aniket484/github-actions-app:latest
