@@ -28,11 +28,20 @@ jobs:
           key_path: key.pem
           port: 22
           script: |
+            # Go to home
             cd /home/ubuntu
+
+            # Clone repo if not exists
+            if [ ! -d "github-action-zero-to-hero" ]; then
+              git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git github-action-zero-to-hero
+            fi
+
+            # Go inside repo
+            cd github-action-zero-to-hero
 
             # Pull latest code
             git pull origin main
 
             # Run container
-            docker compose down
-            docker compose up -d --build
+            docker-compose down || true
+            docker-compose up -d --build
