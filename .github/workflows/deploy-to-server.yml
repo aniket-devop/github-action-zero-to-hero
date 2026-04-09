@@ -1,23 +1,19 @@
 name: Deploy to Server
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:   # ✅ YE ADD KARNA HAI
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
       - name: Decode SSH key
         run: |
           echo "${{ secrets.SSH_KEY_BASE64 }}" | base64 -d > key.pem
           chmod 600 key.pem
 
-      - name: SSH to Server
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
@@ -25,6 +21,5 @@ jobs:
           key_path: key.pem
           port: 22
           script: |
-            echo "Connected successfully"
             cd /home/ubuntu
-            ls -la
+            docker compose up -d --build
