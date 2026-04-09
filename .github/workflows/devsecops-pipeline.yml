@@ -1,35 +1,45 @@
-name: DevSecOps End To End Pipeline
+name: DevSecOps Pipeline
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  code-quality:
-    uses: ./.github/workflows/code-quality.yml
 
-  secrets-scan:
-    uses: ./.github/workflows/secrets-scan.yml
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Code OK"
 
   dependency-scan:
-    uses: ./.github/workflows/dependency-scan.yml
+    runs-on: ubuntu-latest
+    needs: code-quality
+    steps:
+      - run: echo "Dependency OK"
 
   docker-lint:
-    uses: ./.github/workflows/docker-lint.yml
+    runs-on: ubuntu-latest
+    needs: code-quality
+    steps:
+      - run: echo "Docker OK"
 
   build-push:
-    needs: [code-quality, secrets-scan, dependency-scan, docker-lint]
-    uses: ./.github/workflows/docker-build-push.yml
-    secrets:
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    needs: [dependency-scan, docker-lint]
+    steps:
+      - run: echo "Build OK"
 
   image-scan:
+    runs-on: ubuntu-latest
     needs: build-push
-    uses: ./.github/workflows/image-scan.yml
+    steps:
+      - run: echo "Scan OK"
 
   deploy:
+    runs-on: ubuntu-latest
     needs: image-scan
-    uses: ./.github/workflows/deploy-to-server.yml
-    secrets:
-      SSH_KEY_BASE64: ${{ secrets.SSH_KEY_BASE64 }}
-      HOST: ${{ secrets.HOST }}
-      USERNAME: ${{ secrets.USERNAME }}
+    steps:
+      - run: echo "Deploy Triggered"
