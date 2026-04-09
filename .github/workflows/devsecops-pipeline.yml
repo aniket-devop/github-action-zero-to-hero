@@ -29,3 +29,7 @@ jobs:
   deploy:
     needs: image-scan
     uses: ./.github/workflows/deploy-to-server.yml
+    secrets:
+      HOST: ${{ secrets.HOST }}
+      USERNAME: ${{ secrets.USERNAME }}
+      SSH_KEY: ${{ secrets.SSH_KEY }}
