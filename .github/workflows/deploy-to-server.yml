@@ -1,28 +1,26 @@
 name: Deploy to Server
 
 on:
-  workflow_call:
-    secrets:
-      HOST:
-        required: true
-      USERNAME:
-        required: true
-      SSH_KEY:
-        required: true
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: SSH to Server
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.KEY }}
+          port: 22
           script: |
-            docker pull aniket484/github-actions-app:latest
-            docker stop app || true
-            docker rm app || true
-            docker run -d -p 80:80 --name app aniket484/github-actions-app:latest
+            echo "Connected successfully"
+            cd /home/ubuntu
+            ls -la
