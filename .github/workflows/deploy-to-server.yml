@@ -1,43 +1,26 @@
-name: Deploy to Server
+name: Build & Push Docker Image
 
 on:
-  workflow_call:
-    secrets:
-      SSH_KEY:
-        required: true
-      HOST:
-        required: true
-      USERNAME:
-        required: true
+  push:
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Docker login
+        uses: docker/login-action@v3
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            echo "🚀 Deploy Start"
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-            cd /home/ubuntu
+      - name: Build image
+        run: docker build -t aniket484/github-actions-app:latest .
 
-            if [ ! -d "github-action-zero-to-hero" ]; then
-              git clone https://github.com/${{ github.repository }} github-action-zero-to-hero
-            fi
-
-            cd github-action-zero-to-hero
-
-            git pull origin main
-
-            docker-compose down || true
-            docker-compose up -d --build
-
-            echo "✅ Done"
+      - name: Push image
+        run: docker push aniket484/github-actions-app:latest
