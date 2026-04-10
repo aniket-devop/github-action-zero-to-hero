@@ -3,132 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevSecOps Hands-On | Aniket Kumar</title>
+<title>DevOps Pipeline | Aniket Kumar</title>
 
 <style>
-:root {
-    --blue: #6366f1;
-    --purple: #8b5cf6;
-    --light: #eef2ff;
-    --dark: #0f172a;
-    --text: #cbd5f5;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    height: 100vh;
+    margin: 0;
+    font-family: Arial;
     background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    height: 100vh;
 }
 
 /* Card */
-.card {
+.container {
     background: rgba(255,255,255,0.05);
     padding: 40px;
     border-radius: 15px;
     text-align: center;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 25px rgba(99,102,241,0.3);
-    width: 320px;
+    box-shadow: 0 0 30px rgba(99,102,241,0.4);
+    width: 520px;
 }
 
-/* Glitch Text */
-.glitch {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--blue);
+/* Logo */
+.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Title */
+h1 {
+    color: #6366f1;
+}
+
+/* Pipeline */
+.pipeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* Step */
+.step {
+    text-align: center;
+    flex: 1;
     position: relative;
 }
 
-.glitch::before,
-.glitch::after {
-    content: "Pipeline Done 🔐";
+/* Circle */
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1e293b;
+    line-height: 50px;
+    margin: auto;
+    border: 2px solid #6366f1;
+}
+
+/* Done */
+.done .circle {
+    background: #22c55e;
+    border: none;
+}
+
+/* Line */
+.step::after {
+    content: "";
     position: absolute;
-    left: 0;
-}
-
-.glitch::before {
-    color: cyan;
+    width: 100%;
+    height: 3px;
+    background: #334155;
+    top: 25px;
+    left: 50%;
     z-index: -1;
-    animation: glitchTop 1s infinite;
 }
 
-.glitch::after {
-    color: magenta;
-    z-index: -2;
-    animation: glitchBottom 1s infinite;
-}
-
-/* Animations */
-@keyframes glitchTop {
-    0% { transform: translate(0,0); }
-    20% { transform: translate(-2px,-2px); }
-    40% { transform: translate(2px,2px); }
-    60% { transform: translate(-2px,2px); }
-    80% { transform: translate(2px,-2px); }
-    100% { transform: translate(0,0); }
-}
-
-@keyframes glitchBottom {
-    0% { transform: translate(0,0); }
-    20% { transform: translate(2px,2px); }
-    40% { transform: translate(-2px,-2px); }
-    60% { transform: translate(2px,-2px); }
-    80% { transform: translate(-2px,2px); }
-    100% { transform: translate(0,0); }
+.step:last-child::after {
+    display: none;
 }
 
 /* Text */
-p {
-    margin-top: 15px;
-    color: var(--text);
+.label {
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 /* Button */
 button {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px 20px;
+    background: #6366f1;
     border: none;
     border-radius: 6px;
-    background: linear-gradient(45deg, var(--blue), var(--purple));
     color: white;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    transform: scale(1.05);
-}
-
-/* Author */
-.author {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #94a3b8;
-}
 </style>
 </head>
 
 <body>
 
-<div class="card">
-    <div class="glitch">Pipeline Done 🔐</div>
-    <p>CI/CD Deployment Successful 🚀</p>
+<div class="container">
 
-    <button onclick="alert('Deploy triggered 🚀')">
-        Deploy Again
-    </button>
+    <!-- 🔥 DevOps Insider Logo -->
+    <img class="logo" src="https://devopsinsider.io/wp-content/uploads/2023/05/DevOps-Insider-Logo.png" alt="DevOps Insider Logo">
 
-    <div class="author">By Aniket Kumar</div>
+    <h1>🚀 CI/CD Pipeline</h1>
+
+    <div class="pipeline">
+        <div class="step done">
+            <div class="circle">✔</div>
+            <div class="label">Code</div>
+        </div>
+
+        <div class="step done">
+            <div class="circle">✔</div>
+            <div class="label">Build</div>
+        </div>
+
+        <div class="step done">
+            <div class="circle">✔</div>
+            <div class="label">Test</div>
+        </div>
+
+        <div class="step done">
+            <div class="circle">✔</div>
+            <div class="label">Deploy</div>
+        </div>
+    </div>
+
+    <p style="margin-top:20px;">Pipeline Completed Successfully ✅</p>
+
+    <button onclick="location.reload()">Run Again</button>
+
+    <p style="margin-top:20px; font-size:12px;">By Aniket Kumar</p>
 </div>
 
 </body>
