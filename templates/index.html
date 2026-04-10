@@ -1,24 +1,135 @@
-<h1>DevOps Insider 🚀 NEW UI v2</h1>
-<div class="badge">Production Ready Deployment</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevSecOps Hands-On | Aniket Kumar</title>
 
-<div class="cards">
-    <div class="card">
-        <span>Framework</span>
-        <strong>Flask 3.1</strong>
-    </div>
+<style>
+:root {
+    --blue: #6366f1;
+    --purple: #8b5cf6;
+    --light: #eef2ff;
+    --dark: #0f172a;
+    --text: #cbd5f5;
+}
 
-    <div class="card">
-        <span>Runtime</span>
-        <strong>Python 3.x</strong>
-    </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    <div class="card">
-        <span>Deploy</span>
-        <strong>AWS EC2</strong>
-    </div>
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
 
-    <div class="card">
-        <span>CI/CD</span>
-        <strong>GitHub Actions</strong>
-    </div>
+/* Card */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(99,102,241,0.3);
+    width: 320px;
+}
+
+/* Glitch Text */
+.glitch {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--blue);
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: "Pipeline Done 🔐";
+    position: absolute;
+    left: 0;
+}
+
+.glitch::before {
+    color: cyan;
+    z-index: -1;
+    animation: glitchTop 1s infinite;
+}
+
+.glitch::after {
+    color: magenta;
+    z-index: -2;
+    animation: glitchBottom 1s infinite;
+}
+
+/* Animations */
+@keyframes glitchTop {
+    0% { transform: translate(0,0); }
+    20% { transform: translate(-2px,-2px); }
+    40% { transform: translate(2px,2px); }
+    60% { transform: translate(-2px,2px); }
+    80% { transform: translate(2px,-2px); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0,0); }
+    20% { transform: translate(2px,2px); }
+    40% { transform: translate(-2px,-2px); }
+    60% { transform: translate(2px,-2px); }
+    80% { transform: translate(-2px,2px); }
+    100% { transform: translate(0,0); }
+}
+
+/* Text */
+p {
+    margin-top: 15px;
+    color: var(--text);
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(45deg, var(--blue), var(--purple));
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Author */
+.author {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="glitch">Pipeline Done 🔐</div>
+    <p>CI/CD Deployment Successful 🚀</p>
+
+    <button onclick="alert('Deploy triggered 🚀')">
+        Deploy Again
+    </button>
+
+    <div class="author">By Aniket Kumar</div>
 </div>
+
+</body>
+</html>
