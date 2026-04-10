@@ -1,201 +1,132 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DevOps Insider</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
-    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #312e81);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at top, #1e1b4b, #020617);
-    color: white;
-    overflow: hidden;
+    height: 100vh;
 }
 
-/* animated background glow */
-.bg-glow {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #6c5ce7, transparent);
-    filter: blur(120px);
-    top: -100px;
-    left: -100px;
-    animation: float 6s infinite alternate;
-}
-
-.bg-glow2 {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #22c1c3, transparent);
-    filter: blur(120px);
-    bottom: -100px;
-    right: -100px;
-    animation: float 8s infinite alternate;
-}
-
-@keyframes float {
-    from { transform: translateY(0px); }
-    to { transform: translateY(50px); }
-}
-
-/* container */
+/* Container */
 .container {
     text-align: center;
-    z-index: 10;
 }
 
-/* heading */
+/* Title */
 h1 {
-    font-size: 50px;
-    font-weight: 600;
-    background: linear-gradient(90deg, #22c1c3, #6c5ce7);
+    font-size: 48px;
+    background: linear-gradient(to right, #38bdf8, #6366f1);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-/* badge */
+/* Badge */
 .badge {
+    display: inline-block;
     margin-top: 15px;
     padding: 8px 18px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.2);
-    display: inline-block;
+    border: 1px solid #6366f1;
+    border-radius: 25px;
     font-size: 14px;
-    color: #ccc;
-    backdrop-filter: blur(10px);
+    color: #c4b5fd;
 }
 
-/* subtitle */
-.subtext {
+/* Subtitle */
+.subtitle {
     margin-top: 10px;
+    color: #9ca3af;
     font-size: 14px;
-    color: #aaa;
 }
 
-/* cards */
+/* Cards */
 .cards {
-    margin-top: 50px;
     display: flex;
-    gap: 25px;
-    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* premium card */
 .card {
-    position: relative;
-    width: 200px;
-    padding: 25px;
-    border-radius: 20px;
     background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    width: 180px;
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(20px);
-    transition: 0.4s;
-}
-
-/* glow border */
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 1px;
-    background: linear-gradient(45deg, #22c1c3, #6c5ce7);
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-12px) scale(1.05);
-    box-shadow: 0 0 30px rgba(108,92,231,0.6);
+    transform: translateY(-5px);
 }
 
-.card h3 {
-    font-size: 13px;
-    color: #aaa;
+/* Small title */
+.card h4 {
+    font-size: 12px;
+    color: #9ca3af;
+    letter-spacing: 1px;
 }
 
+/* Main text */
 .card p {
-    font-size: 20px;
-    margin-top: 8px;
-    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* footer */
-.footer {
-    margin-top: 40px;
-    font-size: 13px;
-    color: #777;
+/* CI/CD special card */
+.full {
+    width: 200px;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="bg-glow"></div>
-<div class="bg-glow2"></div>
-
 <div class="container">
 
-<h1>DevOps Insider 🚀</h1>
+    <h1>DevOps Insider 🚀</h1>
 
-<div class="badge">
-    Production Ready Deployment
-</div>
+    <div class="badge">Josh Batch 10 (USA Edition v1)</div>
 
-<div class="subtext">
-    Built • Tested • Linted • Deployed via GitHub Actions ⚡
-</div>
+    <div class="subtitle">
+        Built • Tested • Linted • Deployed via GitHub Actions
+    </div>
 
-<div class="cards">
+    <div class="cards">
 
-```
-<div class="card">
-    <h3>Framework</h3>
-    <p>Flask 3.1</p>
-</div>
+        <div class="card">
+            <h4>FRAMEWORK</h4>
+            <p>Flask 3.1</p>
+        </div>
 
-<div class="card">
-    <h3>Runtime</h3>
-    <p>Python 3.x</p>
-</div>
+        <div class="card">
+            <h4>RUNTIME</h4>
+            <p>Python 3.14</p>
+        </div>
 
-<div class="card">
-    <h3>Deploy</h3>
-    <p>AWS EC2</p>
-</div>
+        <div class="card">
+            <h4>DEPLOY</h4>
+            <p>AWS EC2</p>
+        </div>
 
-<div class="card">
-    <h3>CI/CD</h3>
-    <p>GitHub Actions</p>
-</div>
-```
+        <div class="card full">
+            <h4>CI/CD</h4>
+            <p>GitHub Actions</p>
+        </div>
 
-</div>
-
-<div class="footer">
-    © 2026 DevOps Insider • Powered by CI/CD 🚀
-</div>
+    </div>
 
 </div>
 
