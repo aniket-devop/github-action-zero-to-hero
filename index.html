@@ -1,23 +1,203 @@
-<div style="display:flex; gap:20px; flex-wrap:wrap;">
+<!DOCTYPE html>
 
-    <div class="card">
-        <h3>Framework</h3>
-        <p>Flask 3.1</p>
-    </div>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Insider</title>
 
-    <div class="card">
-        <h3>Runtime</h3>
-        <p>Python 3.14</p>
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <div class="card">
-        <h3>Deploy</h3>
-        <p>AWS EC2</p>
-    </div>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    <div class="card">
-        <h3>CI/CD</h3>
-        <p>GitHub Actions</p>
-    </div>
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #1e1b4b, #020617);
+    color: white;
+    overflow: hidden;
+}
+
+/* animated background glow */
+.bg-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #6c5ce7, transparent);
+    filter: blur(120px);
+    top: -100px;
+    left: -100px;
+    animation: float 6s infinite alternate;
+}
+
+.bg-glow2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #22c1c3, transparent);
+    filter: blur(120px);
+    bottom: -100px;
+    right: -100px;
+    animation: float 8s infinite alternate;
+}
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(50px); }
+}
+
+/* container */
+.container {
+    text-align: center;
+    z-index: 10;
+}
+
+/* heading */
+h1 {
+    font-size: 50px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #22c1c3, #6c5ce7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* badge */
+.badge {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: inline-block;
+    font-size: 14px;
+    color: #ccc;
+    backdrop-filter: blur(10px);
+}
+
+/* subtitle */
+.subtext {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* cards */
+.cards {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* premium card */
+.card {
+    position: relative;
+    width: 200px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    transition: 0.4s;
+}
+
+/* glow border */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(45deg, #22c1c3, #6c5ce7);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 0 30px rgba(108,92,231,0.6);
+}
+
+.card h3 {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.card p {
+    font-size: 20px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* footer */
+.footer {
+    margin-top: 40px;
+    font-size: 13px;
+    color: #777;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<div class="container">
+
+<h1>DevOps Insider 🚀</h1>
+
+<div class="badge">
+    Production Ready Deployment
+</div>
+
+<div class="subtext">
+    Built • Tested • Linted • Deployed via GitHub Actions ⚡
+</div>
+
+<div class="cards">
+
+```
+<div class="card">
+    <h3>Framework</h3>
+    <p>Flask 3.1</p>
+</div>
+
+<div class="card">
+    <h3>Runtime</h3>
+    <p>Python 3.x</p>
+</div>
+
+<div class="card">
+    <h3>Deploy</h3>
+    <p>AWS EC2</p>
+</div>
+
+<div class="card">
+    <h3>CI/CD</h3>
+    <p>GitHub Actions</p>
+</div>
+```
 
 </div>
+
+<div class="footer">
+    © 2026 DevOps Insider • Powered by CI/CD 🚀
+</div>
+
+</div>
+
+</body>
+</html>
