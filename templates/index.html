@@ -1,148 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevOps Pipeline | Aniket Kumar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Zero To Hero</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(135deg, #0f172a, #1e1b4b);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-/* Card */
-.container {
-    background: rgba(255,255,255,0.05);
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(99,102,241,0.4);
-    width: 520px;
-}
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            color: white;
+        }
 
-/* Logo */
-.logo {
-    width: 120px;
-    margin-bottom: 10px;
-}
+        .container {
+            text-align: center;
+        }
 
-/* Title */
-h1 {
-    color: #6366f1;
-}
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #22c1c3, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-/* Pipeline */
-.pipeline {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
+        .subtitle {
+            margin-bottom: 25px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
 
-/* Step */
-.step {
-    text-align: center;
-    flex: 1;
-    position: relative;
-}
+        .cards {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* Circle */
-.circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #1e293b;
-    line-height: 50px;
-    margin: auto;
-    border: 2px solid #6366f1;
-}
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            width: 150px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
 
-/* Done */
-.done .circle {
-    background: #22c55e;
-    border: none;
-}
+        .card h3 {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
 
-/* Line */
-.step::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: #334155;
-    top: 25px;
-    left: 50%;
-    z-index: -1;
-}
+        .card p {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-.step:last-child::after {
-    display: none;
-}
+        .bottom-card {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-/* Text */
-.label {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* Button */
-button {
-    margin-top: 30px;
-    padding: 10px 20px;
-    background: #6366f1;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-}
-
-</style>
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
+        <h1>DevOps Zero To Hero</h1>
 
-    <!-- 🔥 DevOps Insider Logo -->
-    <img class="logo" src="https://devopsinsider.io/wp-content/uploads/2023/05/DevOps-Insider-Logo.png" alt="DevOps Insider Logo">
-
-    <h1>🚀 CI/CD Pipeline</h1>
-
-    <div class="pipeline">
-        <div class="step done">
-            <div class="circle">✔</div>
-            <div class="label">Code</div>
+        <div class="subtitle">
+            Built • Tested • Deployed via GitHub Actions
         </div>
 
-        <div class="step done">
-            <div class="circle">✔</div>
-            <div class="label">Build</div>
+        <div class="cards">
+            <div class="card">
+                <h3>Framework</h3>
+                <p>Flask</p>
+            </div>
+
+            <div class="card">
+                <h3>Runtime</h3>
+                <p>Python 3.9</p>
+            </div>
+
+            <div class="card">
+                <h3>Deploy</h3>
+                <p>AWS EC2</p>
+            </div>
         </div>
 
-        <div class="step done">
-            <div class="circle">✔</div>
-            <div class="label">Test</div>
-        </div>
-
-        <div class="step done">
-            <div class="circle">✔</div>
-            <div class="label">Deploy</div>
+        <div class="bottom-card">
+            CI/CD → GitHub Actions 🚀
         </div>
     </div>
-
-    <p style="margin-top:20px;">Pipeline Completed Successfully ✅</p>
-
-    <button onclick="location.reload()">Run Again</button>
-
-    <p style="margin-top:20px; font-size:12px;">By Aniket Kumar</p>
-</div>
 
 </body>
 </html>
