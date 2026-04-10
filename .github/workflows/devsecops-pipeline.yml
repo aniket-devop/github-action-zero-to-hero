@@ -1,10 +1,7 @@
-name: DevSecOps Pipeline End to End pipeline Deploy
+name: DevSecOps Pipeline
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
 
 jobs:
 
@@ -12,34 +9,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Code OK"
+      - run: echo "Code quality check"
 
   dependency-scan:
     runs-on: ubuntu-latest
     needs: code-quality
     steps:
-      - run: echo "Dependency OK"
+      - uses: actions/checkout@v4
+      - run: echo "Dependency scan"
 
   docker-lint:
     runs-on: ubuntu-latest
     needs: code-quality
     steps:
-      - run: echo "Docker OK"
+      - uses: actions/checkout@v4
+      - run: echo "Docker lint"
+
+  secrets-scan:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Secrets scan"
 
   build-push:
     runs-on: ubuntu-latest
-    needs: [dependency-scan, docker-lint]
+    needs: [dependency-scan, docker-lint, secrets-scan]
     steps:
-      - run: echo "Build OK"
+      - uses: actions/checkout@v4
+      - run: echo "Build and push Docker image"
 
   image-scan:
     runs-on: ubuntu-latest
     needs: build-push
     steps:
-      - run: echo "Scan OK"
+      - uses: actions/checkout@v4
+      - run: echo "Trivy scan"
 
   deploy:
     runs-on: ubuntu-latest
     needs: image-scan
     steps:
-      - run: echo "Deploy Triggered"
+      - run: echo "Deploying app"
