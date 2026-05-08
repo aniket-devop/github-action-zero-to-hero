@@ -1,84 +1,53 @@
 <div align="center">
 
-# ⚡ GitHub Actions: Zero to Hero  
+# ⚡ GitHub Actions: Zero to Hero
 
-### 🚀 Modern CI/CD + Docker + DevSecOps Pipeline
+### 🚀 Production-Grade CI/CD Pipeline | Docker | DevSecOps
 
 ---
 
-<img src="https://skillicons.dev/icons?i=github,githubactions,docker,linux,aws,python" />
+<img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3000&color=00F7FF&center=true&vCenter=true&width=700&lines=CI%2FCD+Automation+Pipeline;GitHub+Actions+Mastery;Docker+Containerization;DevSecOps+Workflow;Cloud+Deployment+Ready" />
+
+---
 
 </div>
 
 ---
 
-## 🌐 Overview
+## 🧠 Tech Arsenal
 
-A **real-world DevOps CI/CD pipeline project** that automates:
+<div align="center">
 
-- Code Integration
-- Testing & Validation
-- Security Scanning
-- Docker Image Build
-- Cloud Deployment
+<img src="https://skillicons.dev/icons?i=githubactions" width="70"/>
+<img src="https://skillicons.dev/icons?i=docker" width="70"/>
+<img src="https://skillicons.dev/icons?i=linux" width="70"/>
+<img src="https://skillicons.dev/icons?i=aws" width="70"/>
+<img src="https://skillicons.dev/icons?i=git" width="70"/>
+<img src="https://skillicons.dev/icons?i=python" width="70"/>
 
----
-
-## 🧠 Tech Stack (3D Style Tools)
-
-<p align="center">
-
-<img src="https://skillicons.dev/icons?i=githubactions" width="80"/>
-<img src="https://skillicons.dev/icons?i=docker" width="80"/>
-<img src="https://skillicons.dev/icons?i=linux" width="80"/>
-<img src="https://skillicons.dev/icons?i=aws" width="80"/>
-<img src="https://skillicons.dev/icons?i=python" width="80"/>
-
-</p>
+</div>
 
 ---
 
-## ⚙️ CI/CD Pipeline Flow
+## 🚀 What This Project Does
+
+> A **fully automated DevOps pipeline** that takes your code from commit → production.
+
+---
+
+## ⚙️ CI/CD Pipeline (Real Flow)
 
 ```text
-👨‍💻 Code Push
-     ↓
+👨‍💻 Developer Push Code
+        ↓
 🟦 GitHub Actions Trigger
-     ↓
-🧪 Test + Lint Checks
-     ↓
+        ↓
+🧪 Run Tests + Lint Code
+        ↓
 🔐 Security Scan (DevSecOps)
-     ↓
-🐳 Docker Build Image
-     ↓
-📦 Push to Registry
-     ↓
-🚀 Deploy to Cloud Server
-
----
-
-## 🏗️ System Architecture
-
-```text
-            ┌──────────────┐
-            │  Developer   │
-            └──────┬───────┘
-                   │ Push Code
-                   ▼
-        ┌──────────────────────┐
-        │ GitHub Actions CI/CD │
-        └─────────┬────────────┘
-                  │
-     ┌────────────┼────────────┐
-     ▼            ▼            ▼
- 🧪 Tests     🔐 Security   🧹 Linting
-                  │
-                  ▼
-         🐳 Docker Image Build
-                  │
-                  ▼
-         📦 Docker Hub Registry
-                  │
-                  ▼
-        🚀 Production Deployment
-     (EC2 / VPS / Cloud Server)
+        ↓
+🐳 Build Docker Image
+        ↓
+📦 Push to Docker Hub
+        ↓
+🚀 Deploy to Cloud Server (EC2)
