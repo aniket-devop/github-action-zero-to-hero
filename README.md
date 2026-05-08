@@ -1,44 +1,50 @@
 <div align="center">
 
-# 🚀 GitHub Actions: Zero to Hero  
+# ⚡ GitHub Actions: Zero to Hero
 
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-blue?style=for-the-badge&logo=githubactions)
-![Docker](https://img.shields.io/badge/Docker-DevOps-blue?style=for-the-badge&logo=docker)
-![DevOps](https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge&logo=linux)
-
-### ⚡ CI/CD | 🐳 Docker | 🔐 DevSecOps | 🚀 Automation
+### 🚀 From Code → CI/CD → Docker → Deployment
 
 ---
+
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-blue?style=for-the-badge&logo=githubactions)
+![CD](https://img.shields.io/badge/CD-Automation-green?style=for-the-badge)
+![DevOps](https://img.shields.io/badge/DevOps-Engineer-orange?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-Containers-blue?style=for-the-badge&logo=docker)
 
 </div>
 
-## 📌 Overview
+---
 
-This repository is a **real-world DevOps project** built to master **GitHub Actions CI/CD pipelines step-by-step**.
+## 🧭 About This Project
 
-It demonstrates how modern DevOps teams automate end-to-end workflows including:
+> A **production-style CI/CD pipeline project** designed to simulate how real DevOps teams build, test, secure, containerize, and deploy applications.
 
-- 🔄 Code Integration (CI)
-- 🧪 Automated Testing
-- 🐳 Docker Image Build
-- 🚀 Deployment Automation (CD)
-- 🔐 Security Scanning (DevSecOps)
+This repo focuses on **automation-first engineering mindset** using GitHub Actions.
 
 ---
 
-## ⚡ CI/CD Pipeline Flow
+## 🏗️ System Architecture
 
 ```text
-👨‍💻 Developer Push Code
-          ↓
-🟦 GitHub Actions Trigger
-          ↓
-🧪 Run Tests + Linting
-          ↓
-🔐 Security Scans (SAST / DevSecOps)
-          ↓
-🐳 Build Docker Image
-          ↓
-📦 Push to Docker Hub
-          ↓
-🚀 Deploy to Server (EC2 / VPS))
+            ┌──────────────┐
+            │  Developer   │
+            └──────┬───────┘
+                   │ Push Code
+                   ▼
+        ┌──────────────────────┐
+        │ GitHub Actions CI/CD │
+        └─────────┬────────────┘
+                  │
+     ┌────────────┼────────────┐
+     ▼            ▼            ▼
+ 🧪 Tests     🔐 Security   🧹 Linting
+                  │
+                  ▼
+         🐳 Docker Image Build
+                  │
+                  ▼
+         📦 Docker Hub Registry
+                  │
+                  ▼
+        🚀 Production Deployment
+     (EC2 / VPS / Cloud Server)
