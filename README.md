@@ -11,71 +11,77 @@
 ---
 
 </div>
-
----
-
-## 🧠 Tech Stack (Production Tools)
-
 <div align="center">
 
-| GitHub Actions | Docker | Linux | AWS | Git |
-|:--:|:--:|:--:|:--:|:--:|
-| <img src="https://skillicons.dev/icons?i=githubactions" width="60"/> | <img src="https://skillicons.dev/icons?i=docker" width="60"/> | <img src="https://skillicons.dev/icons?i=linux" width="60"/> | <img src="https://skillicons.dev/icons?i=aws" width="60"/> | <img src="https://skillicons.dev/icons?i=git" width="60"/> |
+# ⚡ GitHub Actions: Zero to Hero  
+
+### 🚀 CI/CD Automation | 🐳 Docker | 🔐 DevSecOps | ☁️ Cloud Deployment  
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=800&color=00F7FF&center=true&vCenter=true&width=850&lines=GitHub+Actions+CI%2FCD+Pipeline;Docker+Based+Deployment;DevSecOps+Security+Automation;Cloud+Ready+Architecture" />
+
+---
 
 </div>
 
 ---
 
-## 🚀 What This Project Actually Does
+## 🧠 Tech Stack (Industry Tools)
 
-> This is not a demo — this is a **real-world CI/CD automation system**.
-
-Every code push triggers a fully automated production pipeline.
+- ⚙️ GitHub Actions  
+- 🐳 Docker  
+- 🐧 Linux Server  
+- ☁️ AWS EC2  
+- 📦 Docker Hub  
+- 🔧 Git / GitHub  
 
 ---
 
-## ⚙️ End-to-End CI/CD Flow
+## 🚀 Project Overview
+
+This project demonstrates a **real-world CI/CD pipeline automation system** using GitHub Actions.
+
+It automates the full lifecycle of application delivery:
+
+- Code Integration  
+- Testing & Validation  
+- Security Scanning  
+- Docker Image Build  
+- Cloud Deployment  
+
+---
+
+## ⚙️ CI/CD Pipeline Flow
 
 ```text
-👨‍💻 Developer Commit Code
-          ↓
-🟦 GitHub Actions Trigger Pipeline
-          ↓
-🧪 CI Stage
-   ├── Lint Code
-   └── Run Tests
-          ↓
-🔐 Security Stage (DevSecOps)
-   ├── Dependency Scan
-   └── Secret Detection
-          ↓
-🐳 Build Stage
-   └── Docker Image Build
-          ↓
-📦 Registry Stage
-   └── Push to Docker Hub
-          ↓
-🚀 CD Stage
-   └── Deploy to AWS EC2 / VPS
+👨‍💻 Developer Push Code
+        ↓
+🟦 GitHub Actions Trigger
+        ↓
+🧪 Run Tests + Lint Checks
+        ↓
+🔐 Security Scan (DevSecOps)
+        ↓
+🐳 Build Docker Image
+        ↓
+📦 Push to Docker Hub
+        ↓
+🚀 Deploy to AWS EC2 Server
 
 
 
 🏗️ System Architecture (Production Style)
 
-GitHub Repository
-        ↓
+GitHub Repo
+   ↓
 GitHub Actions Runner
-        ↓
-CI Pipeline (Test + Quality Check)
-        ↓
-Docker Build Engine
-        ↓
+   ↓
+CI Stage (Test + Lint)
+   ↓
+Docker Build System
+   ↓
 Docker Hub Registry
-        ↓
-Cloud Server (AWS EC2)
-        ↓
+   ↓
+AWS EC2 Server
+   ↓
 Live Application 🚀
-
-🏗️ System Architecture (Production Style)
-
 
