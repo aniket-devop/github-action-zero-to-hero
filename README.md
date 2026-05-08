@@ -3,23 +3,26 @@
 # 🚀 GitHub Actions: Zero to Hero  
 
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-blue?style=for-the-badge&logo=githubactions)
-![Docker](https://img.shields.io/badge/Docker-Containerization-blue?style=for-the-badge&logo=docker)
-![DevOps](https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-DevOps-blue?style=for-the-badge&logo=docker)
+![DevOps](https://img.shields.io/badge/DevOps-Automation-orange?style=for-the-badge&logo=linux)
 
-</div>
+### ⚡ CI/CD | 🐳 Docker | 🔐 DevSecOps | 🚀 Automation
 
 ---
 
+</div>
+
 ## 📌 Overview
 
-This repository is a **real-world DevOps project** designed to master **GitHub Actions CI/CD pipelines** step-by-step.
+This repository is a **real-world DevOps project** built to master **GitHub Actions CI/CD pipelines step-by-step**.
 
-It demonstrates how modern DevOps teams automate:
-- Code integration
-- Testing pipelines
-- Docker builds
-- Deployment automation
-- Security scanning (DevSecOps)
+It demonstrates how modern DevOps teams automate end-to-end workflows including:
+
+- 🔄 Code Integration (CI)
+- 🧪 Automated Testing
+- 🐳 Docker Image Build
+- 🚀 Deployment Automation (CD)
+- 🔐 Security Scanning (DevSecOps)
 
 ---
 
@@ -32,10 +35,10 @@ It demonstrates how modern DevOps teams automate:
           ↓
 🧪 Run Tests + Linting
           ↓
-🔐 Security Scans (DevSecOps)
+🔐 Security Scans (SAST / DevSecOps)
           ↓
 🐳 Build Docker Image
           ↓
 📦 Push to Docker Hub
           ↓
-🚀 Deploy to Server (EC2 / VPS)
+🚀 Deploy to Server (EC2 / VPS))
