@@ -1,12 +1,12 @@
 <div align="center">
 
-# ⚡ GitHub Actions: Zero to Hero
+# ⚡ GitHub Actions: Zero to Hero  
 
-### 🚀 Production-Grade CI/CD Pipeline | Docker | DevSecOps
+### 🚀 Production CI/CD Pipeline | Docker | DevSecOps | Cloud Automation
 
 ---
 
-<img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3000&color=00F7FF&center=true&vCenter=true&width=700&lines=CI%2FCD+Automation+Pipeline;GitHub+Actions+Mastery;Docker+Containerization;DevSecOps+Workflow;Cloud+Deployment+Ready" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=2800&pause=800&color=00F7FF&center=true&vCenter=true&width=900&lines=Automate+Everything+with+GitHub+Actions;CI%2FCD+Pipeline+from+Scratch;Docker+Build+%26+Deploy+Workflow;DevSecOps+Security+Integration;Cloud+Ready+Production+Pipeline" />
 
 ---
 
@@ -14,40 +14,68 @@
 
 ---
 
-## 🧠 Tech Arsenal
+## 🧠 Tech Stack (Production Tools)
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=githubactions" width="70"/>
-<img src="https://skillicons.dev/icons?i=docker" width="70"/>
-<img src="https://skillicons.dev/icons?i=linux" width="70"/>
-<img src="https://skillicons.dev/icons?i=aws" width="70"/>
-<img src="https://skillicons.dev/icons?i=git" width="70"/>
-<img src="https://skillicons.dev/icons?i=python" width="70"/>
+| GitHub Actions | Docker | Linux | AWS | Git |
+|:--:|:--:|:--:|:--:|:--:|
+| <img src="https://skillicons.dev/icons?i=githubactions" width="60"/> | <img src="https://skillicons.dev/icons?i=docker" width="60"/> | <img src="https://skillicons.dev/icons?i=linux" width="60"/> | <img src="https://skillicons.dev/icons?i=aws" width="60"/> | <img src="https://skillicons.dev/icons?i=git" width="60"/> |
 
 </div>
 
 ---
 
-## 🚀 What This Project Does
+## 🚀 What This Project Actually Does
 
-> A **fully automated DevOps pipeline** that takes your code from commit → production.
+> This is not a demo — this is a **real-world CI/CD automation system**.
+
+Every code push triggers a fully automated production pipeline.
 
 ---
 
-## ⚙️ CI/CD Pipeline (Real Flow)
+## ⚙️ End-to-End CI/CD Flow
 
 ```text
-👨‍💻 Developer Push Code
+👨‍💻 Developer Commit Code
+          ↓
+🟦 GitHub Actions Trigger Pipeline
+          ↓
+🧪 CI Stage
+   ├── Lint Code
+   └── Run Tests
+          ↓
+🔐 Security Stage (DevSecOps)
+   ├── Dependency Scan
+   └── Secret Detection
+          ↓
+🐳 Build Stage
+   └── Docker Image Build
+          ↓
+📦 Registry Stage
+   └── Push to Docker Hub
+          ↓
+🚀 CD Stage
+   └── Deploy to AWS EC2 / VPS
+
+
+
+🏗️ System Architecture (Production Style)
+
+GitHub Repository
         ↓
-🟦 GitHub Actions Trigger
+GitHub Actions Runner
         ↓
-🧪 Run Tests + Lint Code
+CI Pipeline (Test + Quality Check)
         ↓
-🔐 Security Scan (DevSecOps)
+Docker Build Engine
         ↓
-🐳 Build Docker Image
+Docker Hub Registry
         ↓
-📦 Push to Docker Hub
+Cloud Server (AWS EC2)
         ↓
-🚀 Deploy to Cloud Server (EC2)
+Live Application 🚀
+
+🏗️ System Architecture (Production Style)
+
+
