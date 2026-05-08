@@ -1,25 +1,59 @@
 <div align="center">
 
-# ⚡ GitHub Actions: Zero to Hero
+# ⚡ GitHub Actions: Zero to Hero  
 
-### 🚀 From Code → CI/CD → Docker → Deployment
+### 🚀 Modern CI/CD + Docker + DevSecOps Pipeline
 
 ---
 
-![CI](https://img.shields.io/badge/CI-GitHub%20Actions-blue?style=for-the-badge&logo=githubactions)
-![CD](https://img.shields.io/badge/CD-Automation-green?style=for-the-badge)
-![DevOps](https://img.shields.io/badge/DevOps-Engineer-orange?style=for-the-badge)
-![Docker](https://img.shields.io/badge/Docker-Containers-blue?style=for-the-badge&logo=docker)
+<img src="https://skillicons.dev/icons?i=github,githubactions,docker,linux,aws,python" />
 
 </div>
 
 ---
 
-## 🧭 About This Project
+## 🌐 Overview
 
-> A **production-style CI/CD pipeline project** designed to simulate how real DevOps teams build, test, secure, containerize, and deploy applications.
+A **real-world DevOps CI/CD pipeline project** that automates:
 
-This repo focuses on **automation-first engineering mindset** using GitHub Actions.
+- Code Integration
+- Testing & Validation
+- Security Scanning
+- Docker Image Build
+- Cloud Deployment
+
+---
+
+## 🧠 Tech Stack (3D Style Tools)
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=githubactions" width="80"/>
+<img src="https://skillicons.dev/icons?i=docker" width="80"/>
+<img src="https://skillicons.dev/icons?i=linux" width="80"/>
+<img src="https://skillicons.dev/icons?i=aws" width="80"/>
+<img src="https://skillicons.dev/icons?i=python" width="80"/>
+
+</p>
+
+---
+
+## ⚙️ CI/CD Pipeline Flow
+
+```text
+👨‍💻 Code Push
+     ↓
+🟦 GitHub Actions Trigger
+     ↓
+🧪 Test + Lint Checks
+     ↓
+🔐 Security Scan (DevSecOps)
+     ↓
+🐳 Docker Build Image
+     ↓
+📦 Push to Registry
+     ↓
+🚀 Deploy to Cloud Server
 
 ---
 
